@@ -25,8 +25,8 @@ class Node:
         #self.heuristic
         self.computeHeuristic()
    # Case if the priority of 2 elements are the same in priority queue
-    def __lt__(self, other):
-        return (self.heuristic < other.heuristic)
+    # def __lt__(self, other):
+    #     return (self.heuristic < other.heuristic)
         
         
     def setParent(self, parentNode):
