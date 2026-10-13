@@ -14,7 +14,8 @@ def performAStarSearch():
     
     #create queue
     pqueue = queue.PriorityQueue()
-    
+    #create visited list
+    visited = []
     #create root node
     initialState = State()
     root = Node(initialState, None)
