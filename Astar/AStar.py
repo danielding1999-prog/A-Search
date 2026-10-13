@@ -32,6 +32,13 @@ def performAStarSearch():
         
         #dequeue nodes from the priority Queue
         _, currentNode = pqueue.get()
+
+        #check if the node has already been visited
+        if currentNode.state.place in visited:
+            continue
+
+        #add to visited list
+        visited.append(currentNode.state.place)
         
         #remove from the fringe
         currentNode.fringe = False
@@ -58,15 +65,10 @@ def performAStarSearch():
             
             childNode = Node(State(childState), currentNode)
 
-            #check if child node is already visited
-            if childNode.state.place not in [v for v in visited]:
-            
 
             #add to tree and queue
-                pqueue.put((childNode.costFromRoot, childNode))
+            pqueue.put((childNode.costFromRoot, childNode))
 
-            #add to visited list
-                visited.append(childNode.state.place)
 
         #show the search tree explored so far
         treeplot = TreePlot()
