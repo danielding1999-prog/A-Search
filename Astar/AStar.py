@@ -58,7 +58,7 @@ def performAStarSearch():
             childNode = Node(State(childState), currentNode)
             
             #add to tree and queue
-            pqueue.put((childNode.heuristic, childNode))
+            pqueue.put((childNode.costFromRoot, childNode))
             
         #show the search tree explored so far
         treeplot = TreePlot()
