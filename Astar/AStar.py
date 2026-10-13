@@ -59,15 +59,15 @@ def performAStarSearch():
             childNode = Node(State(childState), currentNode)
 
             #check if child node is already visited
-            if childNode.state.place in [v.state.place for v in visited]:
-                continue
+            if childNode.state.place not in [v for v in visited]:
+            
 
             #add to tree and queue
-            pqueue.put((childNode.costFromRoot, childNode))
+                pqueue.put((childNode.costFromRoot, childNode))
 
             #add to visited list
-            visited.append(childNode)
-            
+                visited.append(childNode.state.place)
+
         #show the search tree explored so far
         treeplot = TreePlot()
         treeplot.generateDiagram(root, currentNode)
