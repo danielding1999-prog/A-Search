@@ -24,7 +24,7 @@ def performAStarSearch():
     treeplot.generateDiagram(root, root)
     
     #add to priority queue
-    pqueue.put((root.heuristic, root))
+    pqueue.put((root.costFromRoot, root))
     
     #check if there is something in priority queue to dequeue
     while not pqueue.empty(): 
